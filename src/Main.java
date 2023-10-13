@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)
     {
+
         Scanner scanner = new Scanner(System.in);
         int result = 0;
         System.out.println("ВВЕДИТЕ ПЕРВОЕ ЧИСЛО");
@@ -13,36 +14,20 @@ public class Main {
 
         System.out.println("ВВЕДИТЕ ОПЕРАЦИЮ");
         char s = scanner.next().charAt(0);
-        result = count(a,b,s, result);
+        Coount count = new Coount(a,b,s,result);
+        result = count.x();
+
 
         System.out.println("ВВЕДИТЕ ОПЕРАЦИЮ");
         s = scanner.next().charAt(0);
         System.out.println("ВВЕДИТЕ ВТОРОЕ ЧИСЛО");
         b = scanner.nextInt();
-        result = count(result,b,s, result);
+        Coount count2 = new Coount(result,b,s,result);
+        result = count2.x();
 
 
     }
 
-    public static int count(int a, int b, char s, int result){
-        switch (s){
-            case('+'):
-                result = a+b;
-                System.out.println(result);
-                return result;
-            case('-'):
-                result = a-b;
-                System.out.println(result);
-                return result;
-            case('*'):
-                result = a*b;
-                System.out.println(result);
-                return result;
-            case('/'):
-                result = a/b;
-                System.out.println(result);
-                return result;
-        }
-        return 0;
-    }
+
 }
+
